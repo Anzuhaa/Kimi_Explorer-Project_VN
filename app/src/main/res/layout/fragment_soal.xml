@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#bdddf6">
+    <LinearLayout
+        android:id="@+id/LLQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="12dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/timah" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Gambar diatas merupakan unsur apa?"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/RLAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LLQuestion"
+        android:paddingTop="16dp"
+        android:gravity="center_horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnAnswer1"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_background"
+            android:text="Seng"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textAllCaps="false" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnAnswer2"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toEndOf="@id/BtnAnswer1"
+            android:background="@drawable/button_background"
+            android:text="Timah"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"
+            android:textAllCaps="false" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnAnswer3"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/BtnAnswer1"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Stronsium"
+            android:textColor="@color/black"
+            android:textAllCaps="false" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnAnswer4"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:layout_below="@id/BtnAnswer1"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toRightOf="@id/BtnAnswer1"
+            android:background="@drawable/button_background"
+            android:text="Selenium"
+            android:fontFamily="@font/poppins_semibold"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
+</RelativeLayout>
