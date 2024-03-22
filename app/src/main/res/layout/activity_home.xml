@@ -2,19 +2,66 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#bdddf6">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#bdddf6"
+    tools:context=".MainActivity">
 
     <VideoView
         android:id="@+id/vVbackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        />
+        android:layout_centerInParent="true" />
 
-    <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnPlay"
-        android:layout_width="120dp"
+    <ImageView
+        android:layout_width="390dp"
+        android:layout_height="390dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/title_2_bg" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPlay"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Play"/>
+        android:background="@drawable/button_background"
+        android:drawableRight="@drawable/baseline_play_arrow_24"
+        android:paddingLeft="32dp"
+        android:paddingRight="16dp"
+        android:text="Play"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:shadowColor="@color/black"
+        android:outlineSpotShadowColor="@color/black"
+        android:shadowRadius="@integer/material_motion_duration_medium_1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTutorial"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnPlay"
+        android:layout_centerInParent="true"
+        android:text="How To Play"
+        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/baseline_book_24"
+        android:paddingLeft="16dp"
+        android:paddingRight="32dp"
+        android:background="@drawable/button_background"
+        android:textColor="@color/white"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCredits"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnTutorial"
+        android:layout_centerInParent="true"
+        android:text="Credits"
+        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:drawableLeft="@drawable/baseline_apps_24"
+        android:paddingLeft="16dp"
+        android:paddingRight="32dp"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

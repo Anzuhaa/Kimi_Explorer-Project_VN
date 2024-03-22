@@ -6,13 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".gameplay_activity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdTop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="#A0BDDC">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Back To Home"
+            android:textAllCaps="false"
+            android:background="#A0BDDC"
+            android:drawableLeft="@drawable/baseline_home_24"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingLeft="8dp"
+            android:paddingRight="24dp"/>
+
+    </androidx.cardview.widget.CardView>
 
     <FrameLayout
         android:id="@+id/container"
@@ -20,7 +37,7 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/cdTop"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
         />
 
@@ -31,7 +48,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu">
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemRippleColor="@color/white"
+        app:itemIconTint="@color/icon_color"
+        android:background="#A0BDDC">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

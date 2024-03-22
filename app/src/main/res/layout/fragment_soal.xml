@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#bdddf6">
+    android:background="#bdddf6"
+    tools:context=".Soal1_Timah">
+
     <LinearLayout
+        android:layout_marginTop="60dp"
         android:id="@+id/LLQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,28 +22,31 @@
             app:cardCornerRadius="12dp">
 
         <ImageView
+            android:id="@+id/ivQuestImage"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:src="@drawable/timah" />
+            android:src="@drawable/soal1_timah" />
 
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:padding="16dp"
+            android:background="@drawable/button_background"
             android:id="@+id/txtQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Gambar diatas merupakan unsur apa?"
             android:textAlignment="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/RLAnswer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/LLQuestion"
         android:paddingTop="16dp"
         android:gravity="center_horizontal">
@@ -56,7 +61,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_background"
             android:text="Seng"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:fontFamily="@font/poppins_semibold"
             android:textAllCaps="false" />
 
@@ -72,7 +77,7 @@
             android:background="@drawable/button_background"
             android:text="Timah"
             android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textAllCaps="false" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -87,7 +92,7 @@
             android:background="@drawable/button_background"
             android:fontFamily="@font/poppins_semibold"
             android:text="Stronsium"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textAllCaps="false" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -97,7 +102,7 @@
             android:layout_below="@id/BtnAnswer1"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:layout_toRightOf="@id/BtnAnswer1"
@@ -105,6 +110,38 @@
             android:text="Selenium"
             android:fontFamily="@font/poppins_semibold"
             android:textAllCaps="false" />
+
+
     </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnKembali"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:layout_below="@id/RLAnswer"
+        android:layout_marginLeft="32dp"
+        android:drawableLeft="@drawable/baseline_arrow_back_24"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Kembali"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLanjut"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:layout_below="@id/RLAnswer"
+        android:layout_marginRight="32dp"
+        android:drawableRight="@drawable/baseline_arrow_forward_24"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Lanjut"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

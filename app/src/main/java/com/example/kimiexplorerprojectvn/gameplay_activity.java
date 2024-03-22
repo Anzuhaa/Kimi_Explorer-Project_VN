@@ -2,36 +2,45 @@ package com.example.kimiexplorerprojectvn;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarItemView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class gameplay_activity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
+    Button btnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnHome = findViewById(R.id.btnHome);
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
         bottomNavigationView.setOnItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new SoalFragment())
+                .replace(R.id.container, new Soal1_Timah())
                 .commit();
 
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Home = new Intent(gameplay_activity.this, MainActivity.class);
+                startActivity(Home);
+            }
+        });
     }
+
 
     private NavigationBarView.OnItemSelectedListener navListener =
             new NavigationBarView.OnItemSelectedListener() {
@@ -39,21 +48,24 @@ public class gameplay_activity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
 
-                    if(item.getItemId() == R.id.Home) {
-                        Intent intent = new Intent(gameplay_activity.this, gameplay_activity.class);
+                    if(item.getItemId() == R.id.Level) {
+                        selectedFragment = new LevelFragment();
                     }
-                    else if(item.getItemId() == R.id.Level) {
-                        selectedFragment = new SoalFragment();
+                    else if(item.getItemId() == R.id.Stage) {
+                        selectedFragment = new InfoFragment();
                     }
                     else if(item.getItemId() == R.id.Info) {
                         selectedFragment = new InfoFragment();
                     }
 
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.container, selectedFragment)
-                            .commit();
+                    if (selectedFragment != null) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, selectedFragment)
+                                .commit();
+                    }
                     return true;
                 }
             };
+
 
 }

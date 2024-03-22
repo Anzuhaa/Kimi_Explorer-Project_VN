@@ -4,10 +4,10 @@
     <item android:title="Level"
         android:icon="@drawable/baseline_apps_24"
         android:id="@+id/Level"/>
-    <item android:title="Home"
-        android:icon="@drawable/baseline_home_24"
-        android:id="@+id/Home" />
-    <item android:title="Profile"
+    <item android:title="Stage"
+        android:icon="@drawable/baseline_cruelty_free_24"
+        android:id="@+id/Stage" />
+    <item android:title="Credits"
         android:icon="@drawable/baseline_info_24"
         android:id="@+id/Info"/>
 
