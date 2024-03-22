@@ -31,8 +31,7 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:shadowColor="@color/black"
-        android:outlineSpotShadowColor="@color/black"
-        android:shadowRadius="@integer/material_motion_duration_medium_1"/>
+        android:outlineSpotShadowColor="@color/black"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTutorial"

@@ -67,5 +67,4 @@ public class gameplay_activity extends AppCompatActivity {
                 }
             };
 
-
 }

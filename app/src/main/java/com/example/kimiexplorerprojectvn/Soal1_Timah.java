@@ -1,18 +1,23 @@
 package com.example.kimiexplorerprojectvn;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class Soal1_Timah extends Fragment {
-    private Button btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4, btnKembali, btnLanjut;
+    private Button btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4, btnLanjut;
 
     ImageView imageView;
 
@@ -25,8 +30,6 @@ public class Soal1_Timah extends Fragment {
         btnAnswer2 = view.findViewById(R.id.BtnAnswer2);
         btnAnswer3 = view.findViewById(R.id.BtnAnswer3);
         btnAnswer4 = view.findViewById(R.id.BtnAnswer4);
-        btnKembali = view.findViewById(R.id.btnKembali);
-        btnLanjut = view.findViewById(R.id.btnLanjut);
         imageView = view.findViewById(R.id.ivQuestImage);
         btnAnswer1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +41,7 @@ public class Soal1_Timah extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Benar", Toast.LENGTH_SHORT).show();
+                Createpopupwindow();
             }
         });
         btnAnswer3.setOnClickListener(new View.OnClickListener() {
@@ -52,24 +56,31 @@ public class Soal1_Timah extends Fragment {
                 Toast.makeText(getActivity(), "Salah", Toast.LENGTH_SHORT).show();
             }
         });
-
-        btnKembali.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int kembali  = getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new LevelFragment())
-                        .commit();
-            }
-        });
-        btnLanjut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int lanjut  = getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new Soal2_Tungsten())
-                        .commit();
-
-            }
-        });
         return view;
+    }
+    private void Createpopupwindow(){
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.popup_correct,null);
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        PopupWindow popUpWindow = new PopupWindow(popUpView,width,height,focusable);
+        imageView.post(new Runnable() {
+            @Override
+            public void run() {
+                popUpWindow.showAtLocation(imageView, Gravity.CENTER,0,0);
+                btnLanjut = popUpView.findViewById(R.id.btnPopCorrect);
+                btnLanjut.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, new Soal2_Tungsten())
+                                .commit();
+                        popUpWindow.dismiss();
+                    }
+                });
+            }
+        });
     }
 }
