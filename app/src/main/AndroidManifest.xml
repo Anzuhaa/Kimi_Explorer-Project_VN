@@ -7,11 +7,14 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/kimi_launcher"
-        android:label="@string/KimiExploler"
+        android:label="@string/KimiChemiFeast"
         android:roundIcon="@mipmap/kimi_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KimiExplorerprojectVn"
         tools:targetApi="31">
+        <activity
+            android:name=".HowToPlay"
+            android:exported="false" />
         <activity
             android:name=".gameplay_activity"
             android:exported="false" />

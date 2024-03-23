@@ -1,14 +1,18 @@
 package com.example.kimiexplorerprojectvn;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LevelFragment extends Fragment {
@@ -45,7 +49,7 @@ public class LevelFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new Soal1_Timah())
+                        .replace(R.id.container, new Soal11_A())
                         .commit();
             }
         });
@@ -53,11 +57,38 @@ public class LevelFragment extends Fragment {
         btnCoomingSoon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new Soal1_Timah())
-                        .commit();
+                PopupConfirm();
             }
         });
         return view;
    }
+    private void PopupConfirm(){
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.popup_main,null);
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        PopupWindow popUpWindow = new PopupWindow(popUpView,width,height,focusable);
+
+        TextView textView = popUpView.findViewById(R.id.tvPopCorrect);
+        textView.setText("Maaf !");
+        Button button = popUpView.findViewById(R.id.btnPopCorrect);
+        button.setText("Ok");
+        TextView txtDescription = popUpView.findViewById(R.id.tvDescription);
+        txtDescription.setText("Level Ini Belum Di Rilis !");
+        btnCoomingSoon.post(new Runnable() {
+            @Override
+            public void run() {
+                popUpWindow.showAtLocation(btnCoomingSoon, Gravity.CENTER,0,0);
+                btnCoomingSoon = popUpView.findViewById(R.id.btnPopCorrect);
+                btnCoomingSoon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUpWindow.dismiss();
+                    }
+                });
+            }
+        });
+    }
 }

@@ -9,7 +9,7 @@
     <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="match_parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -22,8 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Benar !"
-            android:textSize="64dp"
+            android:text="How To Play"
+            android:textSize="48dp"
             android:textColor="@color/white"
             android:layout_marginTop="16dp"
             android:background="@drawable/button_background"
@@ -59,7 +59,26 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Yey, Anda Benar Silahkan Melanjutkan"
+            android:text="Kerjakan Beberapa Misi Untuk Mendapatkan Wortel Dan Berikan Kepada Maskot Kita Yaitu [ Kimi ]"
+            android:textColor="@color/white"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/tvPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescription"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Anda Juga Bisa Mengerjakan Kembali Misi Misi Untuk Mendapatkan Wortel Kembali"
             android:textColor="@color/white"
             android:background="@drawable/button_background"
             android:fontFamily="@font/poppins_semibold"
@@ -68,20 +87,21 @@
             android:textSize="20dp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnPopCorrect"
+            android:id="@+id/btnPopUp"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="32dp"
             android:background="@drawable/button_background"
             android:drawableRight="@drawable/baseline_arrow_forward_24"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:text="Lanjut"
+            android:text="Mulai"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16dp" />
+
 
     </RelativeLayout>
 

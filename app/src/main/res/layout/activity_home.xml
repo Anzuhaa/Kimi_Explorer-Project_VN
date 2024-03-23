@@ -48,19 +48,4 @@
         android:background="@drawable/button_background"
         android:textColor="@color/white"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCredits"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnTutorial"
-        android:layout_centerInParent="true"
-        android:text="Credits"
-        android:textAllCaps="false"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_background"
-        android:drawableLeft="@drawable/baseline_apps_24"
-        android:paddingLeft="16dp"
-        android:paddingRight="32dp"
-        android:textColor="@color/white"/>
-
 </RelativeLayout>

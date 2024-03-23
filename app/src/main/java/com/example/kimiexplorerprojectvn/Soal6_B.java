@@ -19,12 +19,11 @@ public class Soal6_B extends Fragment {
 
     private TextView tvQuestion;
 
-    ImageView imageView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_soal, container, false);
+        View view = inflater.inflate(R.layout.fragment_soal_no_image, container, false);
 
         btnAnswer1 = view.findViewById(R.id.BtnAnswer1);
         btnAnswer2 = view.findViewById(R.id.BtnAnswer2);
@@ -72,16 +71,16 @@ public class Soal6_B extends Fragment {
         int height = ViewGroup.LayoutParams.WRAP_CONTENT;
         boolean focusable = true;
         PopupWindow popUpWindow = new PopupWindow(popUpView,width,height,focusable);
-        imageView.post(new Runnable() {
+        tvQuestion.post(new Runnable() {
             @Override
             public void run() {
-                popUpWindow.showAtLocation(imageView, Gravity.CENTER,0,0);
+                popUpWindow.showAtLocation(tvQuestion, Gravity.CENTER,0,0);
                 btnLanjut = popUpView.findViewById(R.id.btnPopCorrect);
                 btnLanjut.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, new KimiEatFragment())
+                                .replace(R.id.container, new Soal7_A())
                                 .commit();
                         popUpWindow.dismiss();
                     }
@@ -102,10 +101,12 @@ public class Soal6_B extends Fragment {
         textView.setText("Salah !");
         Button button = popUpView.findViewById(R.id.btnPopCorrect);
         button.setText("Ulang");
-        imageView.post(new Runnable() {
+        TextView txtDescription = popUpView.findViewById(R.id.tvDescription);
+        txtDescription.setText("Aduh, Anda Salah Silahkan Coba Lagi");
+        tvQuestion.post(new Runnable() {
             @Override
             public void run() {
-                popUpWindow.showAtLocation(imageView, Gravity.CENTER,0,0);
+                popUpWindow.showAtLocation(tvQuestion, Gravity.CENTER,0,0);
                 btnLanjut = popUpView.findViewById(R.id.btnPopCorrect);
                 btnLanjut.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -1,15 +1,18 @@
 package com.example.kimiexplorerprojectvn;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +23,8 @@ public class KimiEatFragment extends Fragment {
     TextView tvCarrot;
 
     Integer total;
+
+    Button Start;
 
     int i;
     @Override
@@ -35,14 +40,10 @@ public class KimiEatFragment extends Fragment {
             int valueCarrot = Integer.parseInt(tvCarrot.getText().toString());
             @Override
             public void onClick(View v) {
-
-                if(valueCarrot < 0) {
-                    Toast.makeText(getActivity(), "Sorry Your Carrot Is Not Enough", Toast.LENGTH_SHORT).show();
-                }
-                else if(valueCarrot > 4){
+                if(valueCarrot > 4){
                     total = valueCarrot -1;
                         tvCarrot.setText(total + "");
-                        Toast.makeText(getActivity(), "Thank You!", Toast.LENGTH_SHORT).show();
+                        PopupConfirm();
                         KimiEat1();
 
                 }
@@ -57,7 +58,7 @@ public class KimiEatFragment extends Fragment {
             public void onClick(View v) {
                 total = valueCarrot -1;
                 tvCarrot.setText(total + "");
-                Toast.makeText(getActivity(), "Thank You!", Toast.LENGTH_SHORT).show();
+                PopupConfirm();
                 KimiEat2();
             }
         });
@@ -69,7 +70,7 @@ public class KimiEatFragment extends Fragment {
             public void onClick(View v) {
                 total = valueCarrot -1;
                 tvCarrot.setText(total + "");
-                Toast.makeText(getActivity(), "Thank You!", Toast.LENGTH_SHORT).show();
+                PopupConfirm();
                 KimiEat3();
             }
         });
@@ -81,7 +82,7 @@ public class KimiEatFragment extends Fragment {
             public void onClick(View v) {
                 total = valueCarrot -1;
                 tvCarrot.setText(total + "");
-                Toast.makeText(getActivity(), "Thank You!", Toast.LENGTH_SHORT).show();
+                PopupConfirm();
                 KimiEat4();
             }
         });
@@ -93,10 +94,39 @@ public class KimiEatFragment extends Fragment {
             public void onClick(View v) {
                 total = valueCarrot -1;
                 tvCarrot.setText(total + "");
-                Toast.makeText(getActivity(), "Thank You!", Toast.LENGTH_SHORT).show();
+                PopupConfirm();
                 getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new KimiFragment())
                         .commit();
+            }
+        });
+    }
+    private void PopupConfirm(){
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.popup_main,null);
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        PopupWindow popUpWindow = new PopupWindow(popUpView,width,height,focusable);
+
+        TextView textView = popUpView.findViewById(R.id.tvPopCorrect);
+        textView.setText("Waaw !");
+        Button button = popUpView.findViewById(R.id.btnPopCorrect);
+        button.setText("Lagi");
+        TextView txtDescription = popUpView.findViewById(R.id.tvDescription);
+        txtDescription.setText("Wahh Enak, Berikan Lagi ! Aku Mau !");
+        btnGive.post(new Runnable() {
+            @Override
+            public void run() {
+                popUpWindow.showAtLocation(btnGive, Gravity.CENTER,0,90);
+                Start = popUpView.findViewById(R.id.btnPopCorrect);
+                Start.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUpWindow.dismiss();
+                    }
+                });
             }
         });
     }

@@ -18,7 +18,7 @@
         android:layout_height="160dp"
         android:layout_margin="16dp"
         android:textAllCaps="false"
-        android:text="First Level"
+        android:text="Level Pertama"
         android:fontFamily="@font/montserrat_black"
         android:textSize="32dp"
         android:textColor="@color/white"
@@ -30,7 +30,7 @@
         android:layout_height="160dp"
         android:layout_margin="16dp"
         android:textAllCaps="false"
-        android:text="Second Level"
+        android:text="Level Kedua"
         android:fontFamily="@font/montserrat_black"
         android:textSize="32dp"
         android:textColor="@color/white"
@@ -46,7 +46,7 @@
         android:textSize="32dp"
         android:textColor="@color/white"
         android:textAllCaps="false"
-        android:text="Third Level"
+        android:text="Level Ketiga"
         android:background="@drawable/button_background"
             />
 
@@ -59,7 +59,7 @@
         android:fontFamily="@font/montserrat_black"
         android:textSize="32dp"
         android:textColor="@color/white"
-        android:text="Cooming Soon"
+        android:text="Segera Rilis"
         android:background="@drawable/button_background"/>
     </LinearLayout>
 </FrameLayout>

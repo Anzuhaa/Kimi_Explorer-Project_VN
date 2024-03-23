@@ -1,8 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#bdddf6">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/popup_correct_bg">
+
+        <TextView
+            android:id="@+id/tvPopCorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Credits"
+            android:textSize="64dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvKimipopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPopCorrect"
+            android:layout_marginTop="40dp"
+            android:layout_centerInParent="true"
+            app:cardCornerRadius="24dp">
+
+            <ImageView
+                android:id="@+id/ivPopCorrect"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/kimi_logo" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cvKimipopup"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Terimakasih Telah Menemani Kimi, Dan Tekah Memainkan Game Buatan Kami"
+            android:textColor="@color/white"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+
+        <TextView
+            android:id="@+id/tvPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescription"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Our Teams :\nKezia As Leader \nRevina As Developer"
+            android:textColor="@color/white"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
 
 </FrameLayout>

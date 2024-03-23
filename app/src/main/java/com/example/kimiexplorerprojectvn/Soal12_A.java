@@ -15,7 +15,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Soal2_Tungsten extends Fragment {
+public class Soal12_A extends Fragment {
     private Button btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4, btnLanjut;
 
     ImageView imageView;
@@ -31,11 +31,11 @@ public class Soal2_Tungsten extends Fragment {
         btnAnswer4 = view.findViewById(R.id.BtnAnswer4);
         imageView = view.findViewById(R.id.ivQuestImage);
 
-        imageView.setImageResource(R.drawable.soal2_tungsten);
-        btnAnswer1.setText("Tungsten");
-        btnAnswer2.setText("Lawrencium");
-        btnAnswer3.setText("Antimon");
-        btnAnswer4.setText("Tantalum");
+        imageView.setImageResource(R.drawable.soal12_a);
+        btnAnswer1.setText("[Xe] 4f¹⁴ 5d¹⁰ 6s¹");
+        btnAnswer2.setText("[Xe] 4f¹⁴ 5d¹⁰ 6s²");
+        btnAnswer3.setText("[Kr] 4d¹⁰");
+        btnAnswer4.setText("[Xe] 6s² 4f¹⁴ 5d¹⁰ 6p²");
 
         btnAnswer1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +80,7 @@ public class Soal2_Tungsten extends Fragment {
                     @Override
                     public void onClick(View v) {
                         getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, new Soal3_Timbal())
+                                .replace(R.id.container, new Soal13_C())
                                 .commit();
                         popUpWindow.dismiss();
                     }

@@ -1,6 +1,7 @@
 package com.example.kimiexplorerprojectvn;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -12,7 +13,7 @@ import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnPlay;
+    Button btnPlay,btnHTPlay;
     VideoView vVbackground;
 
     @Override
@@ -21,9 +22,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         btnPlay = findViewById(R.id.btnPlay);
+        btnHTPlay = findViewById(R.id.btnTutorial);
         vVbackground = findViewById(R.id.vVbackground);
 
-        String path ="android.resource://" + getPackageName() + "/" + R.raw.bg_home;
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.bg_home;
         Uri u = Uri.parse(path);
         vVbackground.setVideoURI(u);
 
@@ -43,8 +45,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+        btnHTPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HowToPlay.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
 
+    }
     @Override
     protected void onPostResume(){
         vVbackground.resume();

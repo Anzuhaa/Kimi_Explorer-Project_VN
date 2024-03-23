@@ -94,6 +94,8 @@ public class Soal1_Timah extends Fragment {
         textView.setText("Salah !");
         Button button = popUpView.findViewById(R.id.btnPopCorrect);
         button.setText("Ulang");
+        TextView txtDescription = popUpView.findViewById(R.id.tvDescription);
+        txtDescription.setText("Aduh, Anda Salah Silahkan Coba Lagi");
         imageView.post(new Runnable() {
             @Override
             public void run() {

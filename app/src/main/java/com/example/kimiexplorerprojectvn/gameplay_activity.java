@@ -54,7 +54,7 @@ public class gameplay_activity extends AppCompatActivity {
                     else if(item.getItemId() == R.id.Kimi) {
                         selectedFragment = new KimiFragment();
                     }
-                    else if(item.getItemId() == R.id.Info) {
+                    else if(item.getItemId() == R.id.Credits) {
                         selectedFragment = new InfoFragment();
                     }
 
