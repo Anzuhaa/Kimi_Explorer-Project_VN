@@ -15,7 +15,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Soal1_Timah extends Fragment {
+public class Soal3_Timbal extends Fragment {
     private Button btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4, btnLanjut;
 
     ImageView imageView;
@@ -30,6 +30,13 @@ public class Soal1_Timah extends Fragment {
         btnAnswer3 = view.findViewById(R.id.BtnAnswer3);
         btnAnswer4 = view.findViewById(R.id.BtnAnswer4);
         imageView = view.findViewById(R.id.ivQuestImage);
+
+        imageView.setImageResource(R.drawable.soal3_timbal);
+        btnAnswer1.setText("Tembaga");
+        btnAnswer2.setText("Belerang");
+        btnAnswer3.setText("Belerang");
+        btnAnswer4.setText("Timbal");
+
         btnAnswer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +46,7 @@ public class Soal1_Timah extends Fragment {
         btnAnswer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreatepopupwindowCorrect();
+                CreatepopupwindowWrong();
             }
         });
         btnAnswer3.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +58,8 @@ public class Soal1_Timah extends Fragment {
         btnAnswer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreatepopupwindowWrong();
+
+                CreatepopupwindowCorrect();
             }
         });
         return view;
@@ -73,7 +81,7 @@ public class Soal1_Timah extends Fragment {
                     @Override
                     public void onClick(View v) {
                         getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, new Soal2_Tungsten())
+                                .replace(R.id.container, new Soal4_Raksa())
                                 .commit();
                         popUpWindow.dismiss();
                     }

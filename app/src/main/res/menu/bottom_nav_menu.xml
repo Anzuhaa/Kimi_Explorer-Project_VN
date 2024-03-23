@@ -4,9 +4,9 @@
     <item android:title="Level"
         android:icon="@drawable/baseline_apps_24"
         android:id="@+id/Level"/>
-    <item android:title="Stage"
+    <item android:title="Kimi"
         android:icon="@drawable/baseline_cruelty_free_24"
-        android:id="@+id/Stage" />
+        android:id="@+id/Kimi" />
     <item android:title="Credits"
         android:icon="@drawable/baseline_info_24"
         android:id="@+id/Info"/>

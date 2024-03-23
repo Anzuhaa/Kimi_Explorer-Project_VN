@@ -1,14 +1,18 @@
 package com.example.kimiexplorerprojectvn;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Soal2_Tungsten extends Fragment {
@@ -36,27 +40,79 @@ public class Soal2_Tungsten extends Fragment {
         btnAnswer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Benar", Toast.LENGTH_SHORT).show();
+                CreatepopupwindowCorrect();
             }
         });
         btnAnswer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Salah", Toast.LENGTH_SHORT).show();
+                CreatepopupwindowWrong();
             }
         });
         btnAnswer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Salah", Toast.LENGTH_SHORT).show();
+                CreatepopupwindowWrong();
             }
         });
         btnAnswer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Salah", Toast.LENGTH_SHORT).show();
+                CreatepopupwindowWrong();
             }
         });
         return view;
+    }
+    private void CreatepopupwindowCorrect(){
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.popup_main,null);
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        PopupWindow popUpWindow = new PopupWindow(popUpView,width,height,focusable);
+        imageView.post(new Runnable() {
+            @Override
+            public void run() {
+                popUpWindow.showAtLocation(imageView, Gravity.CENTER,0,0);
+                btnLanjut = popUpView.findViewById(R.id.btnPopCorrect);
+                btnLanjut.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, new Soal3_Timbal())
+                                .commit();
+                        popUpWindow.dismiss();
+                    }
+                });
+            }
+        });
+    }
+    private void CreatepopupwindowWrong(){
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View popUpView = inflater.inflate(R.layout.popup_main,null);
+
+        int width = ViewGroup.LayoutParams.MATCH_PARENT;
+        int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        PopupWindow popUpWindow = new PopupWindow(popUpView,width,height,focusable);
+
+        TextView textView = popUpView.findViewById(R.id.tvPopCorrect);
+        textView.setText("Salah !");
+        Button button = popUpView.findViewById(R.id.btnPopCorrect);
+        button.setText("Ulang");
+        imageView.post(new Runnable() {
+            @Override
+            public void run() {
+                popUpWindow.showAtLocation(imageView, Gravity.CENTER,0,0);
+                btnLanjut = popUpView.findViewById(R.id.btnPopCorrect);
+                btnLanjut.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUpWindow.dismiss();
+                    }
+                });
+            }
+        });
     }
 }

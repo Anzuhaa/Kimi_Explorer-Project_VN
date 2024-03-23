@@ -12,46 +12,54 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnLevel1"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_margin="16dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First Level"/>
-    </androidx.cardview.widget.CardView>
+        android:layout_margin="16dp"
+        android:textAllCaps="false"
+        android:text="First Level"
+        android:fontFamily="@font/montserrat_black"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_background"/>
 
-        <androidx.cardview.widget.CardView
+        <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnLevel2"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_margin="16dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Second Level"/>
-    </androidx.cardview.widget.CardView>
+        android:layout_margin="16dp"
+        android:textAllCaps="false"
+        android:text="Second Level"
+        android:fontFamily="@font/montserrat_black"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_background"
+            />
 
-        <androidx.cardview.widget.CardView
+        <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnLevel3"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_margin="16dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Third Level"/>
-    </androidx.cardview.widget.CardView>
+        android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat_black"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:text="Third Level"
+        android:background="@drawable/button_background"
+            />
 
-        <androidx.cardview.widget.CardView
+        <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnCoomingSoon"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_margin="16dp">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cooming Soon.." />
-    </androidx.cardview.widget.CardView>
-
-
+        android:layout_margin="16dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserrat_black"
+        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:text="Cooming Soon"
+        android:background="@drawable/button_background"/>
     </LinearLayout>
 </FrameLayout>

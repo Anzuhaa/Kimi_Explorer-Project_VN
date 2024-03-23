@@ -15,7 +15,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Soal1_Timah extends Fragment {
+public class Soal4_Raksa extends Fragment {
     private Button btnAnswer1,btnAnswer2,btnAnswer3,btnAnswer4, btnLanjut;
 
     ImageView imageView;
@@ -30,6 +30,13 @@ public class Soal1_Timah extends Fragment {
         btnAnswer3 = view.findViewById(R.id.BtnAnswer3);
         btnAnswer4 = view.findViewById(R.id.BtnAnswer4);
         imageView = view.findViewById(R.id.ivQuestImage);
+
+        imageView.setImageResource(R.drawable.soal4_raksa);
+        btnAnswer1.setText("Radon");
+        btnAnswer2.setText("Raksa");
+        btnAnswer3.setText("Emas");
+        btnAnswer4.setText("Platinum");
+
         btnAnswer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +80,7 @@ public class Soal1_Timah extends Fragment {
                     @Override
                     public void onClick(View v) {
                         getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, new Soal2_Tungsten())
+                                .replace(R.id.container, new Soal5_Emas())
                                 .commit();
                         popUpWindow.dismiss();
                     }

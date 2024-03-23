@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".KimiFragment"
+    android:background="#bdddf6">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlKimi">
+
+            <TextView
+                android:id="@+id/tvCarrot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/white"
+                android:text="0"
+                android:textSize="32dp"
+                />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/carrot_icon"
+                android:layout_toRightOf="@id/tvCarrot"
+                android:layout_marginTop="16dp"
+                />
+
+        </RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cvKimi"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="16dp"
+            android:layout_below="@id/rlKimi"
+            >
+
+            <ImageView android:id="@+id/ivKimi"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:src="@drawable/kimi_logo"
+                android:layout_below="@id/tvCarrot"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnGive"
+            android:layout_centerHorizontal="true"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/button_background"
+            android:text="Beri Makan"
+            android:textAllCaps="false"
+            android:fontFamily="@font/poppins_semibold"/>
+
+    </RelativeLayout>
+</FrameLayout>

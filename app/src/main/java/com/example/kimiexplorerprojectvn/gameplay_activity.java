@@ -29,7 +29,7 @@ public class gameplay_activity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new Soal1_Timah())
+                .replace(R.id.container, new LevelFragment())
                 .commit();
 
         btnHome.setOnClickListener(new View.OnClickListener() {
@@ -51,8 +51,8 @@ public class gameplay_activity extends AppCompatActivity {
                     if(item.getItemId() == R.id.Level) {
                         selectedFragment = new LevelFragment();
                     }
-                    else if(item.getItemId() == R.id.Stage) {
-                        selectedFragment = new InfoFragment();
+                    else if(item.getItemId() == R.id.Kimi) {
+                        selectedFragment = new KimiFragment();
                     }
                     else if(item.getItemId() == R.id.Info) {
                         selectedFragment = new InfoFragment();

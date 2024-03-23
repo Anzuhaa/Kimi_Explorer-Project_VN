@@ -5,34 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#bdddf6"
-    tools:context=".Soal1_Timah">
+    tools:context=".Soal6_B">
 
-    <EditText
-        android:id="@+id/etCarrot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <LinearLayout
-        android:layout_marginTop="60dp"
-        android:id="@+id/LLQuestion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="12dp">
-
-        <ImageView
-            android:id="@+id/ivQuestImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/soal1_timah" />
-
-        </androidx.cardview.widget.CardView>
 
         <TextView
             android:padding="16dp"
@@ -40,19 +14,18 @@
             android:id="@+id/tvQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="308dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Gambar diatas merupakan unsur apa?"
             android:textAlignment="center"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
-    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/RLAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/LLQuestion"
+        android:layout_below="@id/tvQuestion"
         android:paddingTop="16dp"
         android:gravity="center_horizontal">
 
