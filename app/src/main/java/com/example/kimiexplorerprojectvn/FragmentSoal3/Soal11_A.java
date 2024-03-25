@@ -37,7 +37,7 @@ public class Soal11_A extends Fragment {
 
         textView.setText("Tentukan konfigurasi elektron dari unsur tersebut!");
         imageView.setImageResource(R.drawable.soal11_a);
-        btnAnswer1.setText("1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4s² 4p⁴");
+        btnAnswer1.setText("1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁴");
         btnAnswer2.setText("1s² 2s² 2p⁶ 3s² 3p⁶ 4s³ 3d¹⁰ 4d⁵");
         btnAnswer3.setText("1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4d⁶");
         btnAnswer4.setText("1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p³");
