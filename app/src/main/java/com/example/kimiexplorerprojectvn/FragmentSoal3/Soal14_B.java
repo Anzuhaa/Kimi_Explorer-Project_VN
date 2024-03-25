@@ -47,7 +47,7 @@ public class Soal14_B extends Fragment {
         btnAnswer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreatepopupwindowWrong();
+                CreatepopupwindowCorrect();
             }
         });
         btnAnswer3.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +59,7 @@ public class Soal14_B extends Fragment {
         btnAnswer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreatepopupwindowCorrect();
+                CreatepopupwindowWrong();
             }
         });
         return view;
