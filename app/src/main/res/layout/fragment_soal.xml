@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#bdddf6"
-    tools:context=".Soal1_Timah">
+    tools:context=".FragmentSoal1.Soal1_Timah">
 
     <EditText
         android:id="@+id/etCarrot"

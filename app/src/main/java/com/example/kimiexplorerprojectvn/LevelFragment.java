@@ -3,7 +3,6 @@ package com.example.kimiexplorerprojectvn;
 import android.content.Context;
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.Gravity;
@@ -13,7 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.kimiexplorerprojectvn.FragmentSoal1.Soal1_Timah;
+import com.example.kimiexplorerprojectvn.FragmentSoal2.Soal6_B;
+import com.example.kimiexplorerprojectvn.FragmentSoal3.Soal11_A;
 
 public class LevelFragment extends Fragment {
 

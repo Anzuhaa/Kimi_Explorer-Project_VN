@@ -59,7 +59,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Terimakasih Telah Menemani Kimi, Dan Tekah Memainkan Game Buatan Kami"
+            android:text="Terimakasih Telah Menemani Kimi, Dan Telah Memainkan Game Buatan Kami"
             android:textColor="@color/white"
             android:background="@drawable/button_background"
             android:fontFamily="@font/poppins_semibold"
@@ -78,13 +78,14 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Our Teams :\nKezia As Leader \nRevina As Developer"
+            android:text="Our Teams :\nElectra Al Hakim (08)\nJeanette Rachel Hetharia (13)\nKezia Revina Anggraeny (15)\nKhamidatullaili (16)\nSofia Nur Maulidia At-Tijani (34)\nVinsa Metsyaluna Zahrotussita(36)"
             android:textColor="@color/white"
             android:background="@drawable/button_background"
             android:fontFamily="@font/poppins_semibold"
-            android:padding="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
             android:textAlignment="center"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
 
 
     </RelativeLayout>
