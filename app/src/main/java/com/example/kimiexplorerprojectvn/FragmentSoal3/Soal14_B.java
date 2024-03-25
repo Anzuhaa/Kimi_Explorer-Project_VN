@@ -34,9 +34,9 @@ public class Soal14_B extends Fragment {
 
         tvQuestion.setText("Bagaimana cara menulis elektron 19K¹+ ?");
         btnAnswer1.setText("1s²,2s²,2p⁶,3s²,3p⁶,4s¹");
-        btnAnswer2.setText("1s²,2s²,2p⁶,3s²,3p⁴");
+        btnAnswer2.setText("1s²,2s²,2p⁶,3s²,3p⁶");
+        btnAnswer4.setText("1s²,2s²,2p⁶,3s²,3p⁴");
         btnAnswer3.setText("1s²,2s²,2p⁶,3s²,3p⁶,4s²");
-        btnAnswer4.setText("1s²,2s²,2p⁶,3s²,3p⁶");
 
         btnAnswer1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +47,7 @@ public class Soal14_B extends Fragment {
         btnAnswer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreatepopupwindowCorrect();
+                CreatepopupwindowWrong();
             }
         });
         btnAnswer3.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +59,7 @@ public class Soal14_B extends Fragment {
         btnAnswer4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreatepopupwindowWrong();
+                CreatepopupwindowCorrect();
             }
         });
         return view;
